@@ -9,7 +9,7 @@ export class CarsComponent {
 
   constructor() { }
 
-  inputText = '';
+  inputText = 'Default text';
   addCarStatus = '';
 
   addCar() {

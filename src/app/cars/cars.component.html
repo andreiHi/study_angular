@@ -6,9 +6,7 @@
 <hr>
 <i>Добавление в данных в компанент с помощью клавиши Enter</i>
 <input type="text" class="form-control" (keyup.enter)="onKeyUp($event)"/>
-<p>{{ inputText }}</p>
-
-<hr>
-<i>Добавление с помощью референции по мере ввода</i>
-<input type="text" class="form-control" #myInput (input)="inText(myInput.value)"/>
+<!--[] забираем из компонента в шаблон   () из шаблона в компонент-->
+<i>Дву стронниие связывание</i>
+<input type="text" class="form-control" [(ngModel)]="inputText">
 <p>{{ inputText }}</p>
