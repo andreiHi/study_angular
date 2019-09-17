@@ -1,0 +1,14 @@
+<button class="btn btn-primary" (click)="addCar()">Add car</button>
+<p>{{ addCarStatus }}</p>
+<hr>
+<app-car></app-car>
+<app-car></app-car>
+<hr>
+<i>Добавление в данных в компанент с помощью клавиши Enter</i>
+<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)"/>
+<p>{{ inputText }}</p>
+
+<hr>
+<i>Добавление с помощью референции по мере ввода</i>
+<input type="text" class="form-control" #myInput (input)="inText(myInput.value)"/>
+<p>{{ inputText }}</p>
