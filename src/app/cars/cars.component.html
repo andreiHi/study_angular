@@ -5,5 +5,11 @@
 <p >Машина добавлена</p>
 </ng-template>
 <hr>
-<app-car></app-car>
-<app-car></app-car>
+
+<app-car *ngFor="let car of cars"></app-car>
+
+<ul>
+    <li *ngFor="let item of items; let idx = index"><!-- индекс это  текущий индекс отображаемой ячейки-->
+        <b>{{idx + 1}}</b> - <i>{{item.name}}</i>
+    </li>
+</ul>
