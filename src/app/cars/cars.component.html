@@ -9,15 +9,11 @@
 <!--<app-car *ngFor="let car of cars"></app-car>-->
 
 <ul>
-    <li *ngFor="let car of cars; let idx = index">        <!-- индекс это  текущий индекс отображаемой ячейки-->
-        <div
-
-           [ngStyle]="{ backgroundColor: (idx + 1) %2 == 0 ? 'red' : 'green', 'color' : 'white' }"
-           [ngClass]="{'big-text': setBigCarText(car)}"
-        ><!-- выделить четные элементы темным css и текст белым-->
-            <!-- [ngStyle] передается название свойства css и затем его значение -->
-            <!-- [ngClass] передается название класса  css и затем его значение-->
-            <b>{{idx + 1}}</b> - {{car}}
-        </div><!-- выделить четные элементы темным css-->
+    <li *ngFor="let data of dates; let idx = index">        <!-- индекс это  текущий индекс отображаемой ячейки-->
+        <div>
+            <b>{{idx + 1}}</b> - {{ data | uppercase }}
+            <br>
+            <b>{{idx + 1}}</b> - {{ data | date: 'medium' }}
+        </div>
     </li>
 </ul>
