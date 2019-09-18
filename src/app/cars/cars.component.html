@@ -1,12 +1,9 @@
+<input class="form-control" [(ngModel)]="carName">
 <button class="btn btn-primary" (click)="addCar()">Add car</button>
-<p>{{ addCarStatus }}</p>
+<p *ngIf="!addCarStatus; else success" >Машина не добавлена</p>
+<ng-template #success> <!-- референция для того чтоб знать что вывести в случае если отработал блок else -->
+<p >Машина добавлена</p>
+</ng-template>
 <hr>
 <app-car></app-car>
 <app-car></app-car>
-<hr>
-<i>Добавление в данных в компанент с помощью клавиши Enter</i>
-<input type="text" class="form-control" (keyup.enter)="onKeyUp($event)"/>
-<!--[] забираем из компонента в шаблон   () из шаблона в компонент-->
-<i>Дву стронниие связывание</i>
-<input type="text" class="form-control" [(ngModel)]="inputText">
-<p>{{ inputText }}</p>

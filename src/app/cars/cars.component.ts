@@ -9,18 +9,13 @@ export class CarsComponent {
 
   constructor() { }
 
-  inputText = 'Default text';
-  addCarStatus = '';
+
+  carName = '';
+  addCarStatus = false;
 
   addCar() {
-    this.addCarStatus = 'Машина добавлена';
+    this.addCarStatus = true;
   }
 
-  onKeyUp(value) {
-    this.inputText = value.target.value;
-  }
 
-  inText(value: string) {
-    this.inputText = value;
-  }
 }

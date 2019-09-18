@@ -13,4 +13,10 @@ export class CarComponent implements OnInit {
   ngOnInit() {
   }
 
+  carName = 'Ford';
+  year = 2017;
+
+  getName() {
+    return this.carName;
+  }
 }
