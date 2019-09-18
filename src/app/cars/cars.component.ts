@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class CarsComponent {
 
   constructor() { }
-  cars = ['Ford', 'Audi', 'BMW'];
-  items = [ {id : 3, name : 'item1'}, {id : 6, name : 'item2'}, {id : 9, name : 'item3'}];
+  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lada', 'Bently'];
+
   carName = '';
   addCarStatus = false;
 
@@ -20,4 +20,7 @@ export class CarsComponent {
   }
 
 
+  setBigCarText(car: string) {
+    return car.length > 4;
+  }
 }
