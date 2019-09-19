@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
+import {Car} from '../car/car';
 
 @Component({
-  selector: 'app-cars',
-  templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.scss']
+    selector: 'app-cars',
+    templateUrl: './cars.component.html',
+    styleUrls: ['./cars.component.scss']
 })
 export class CarsComponent {
 
-  constructor() { }
-  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lada', 'Bently'];
-  dates = [
-      new Date(2015, 3, 25).toDateString(),
-      new Date(2011, 4, 11).toDateString(),
-      new Date(2017, 2, 8) .toDateString(),
-      new Date(2000, 1, 13).toDateString()
-  ];
+    constructor() { }
+    carName = '';
+    year = 2017;
 
-  carName = '';
-  addCarStatus = false;
+    cars: Car[] = [{
+        name: 'Ford',
+        year: 2015
+    }, {
+        name: 'Audi',
+        year: 2010
+    }, {
+        name: 'BMW',
+        year: 2011
+    }];
 
-  addCar() {
-    this.addCarStatus = true;
-    this.cars.push(this.carName);
-    this.carName  = '';
-  }
-
-
+    addCar() {
+        this.cars.push({name : this.carName, year : this.year });
+        this.carName  = '';
+        this.year = 2017;
+    }
 }
