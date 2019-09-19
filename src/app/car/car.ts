@@ -1,6 +1,3 @@
 export class Car {
-    constructor(public name: string, public  year : number)
-    {}
-
-
+    constructor(public name: string, public  year: number) { }
 }

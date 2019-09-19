@@ -1,6 +1,4 @@
-<input class="form-control" [(ngModel)]="carName">
-<input class="form-control" [(ngModel)]="year">
-<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<app-add-car (carEmitter)="updateCarList($event)"></app-add-car>
 <hr>
 <!-- [] передача данных в дочерний компонент с помощью байдинга -->
 <app-car *ngFor="let car of cars" [carItem]="car"></app-car> <!-- значение car передается в компанент с помощью  [carItem]="car"-->

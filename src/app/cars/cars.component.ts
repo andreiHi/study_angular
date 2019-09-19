@@ -9,8 +9,6 @@ import {Car} from '../car/car';
 export class CarsComponent {
 
     constructor() { }
-    carName = '';
-    year = 2017;
 
     cars: Car[] = [{
         name: 'Ford',
@@ -23,9 +21,8 @@ export class CarsComponent {
         year: 2011
     }];
 
-    addCar() {
-        this.cars.push({name : this.carName, year : this.year });
-        this.carName  = '';
-        this.year = 2017;
+    updateCarList(car: Car) {
+        this.cars.push(car);
     }
+
 }
