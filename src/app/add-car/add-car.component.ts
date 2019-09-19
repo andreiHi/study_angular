@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
 import {Car} from '../car/car';
 
 @Component({
@@ -12,7 +12,12 @@ export class AddCarComponent {
   year = 2017;
   @Output()carEmitter = new EventEmitter<Car>();
 
-  addCar() {
+  // @ts-ignore
+  @ViewChild('carYearInput') carYearInput: ElementRef;
+
+  addCar(name: HTMLInputElement) {
+    this.year = +this.carYearInput.nativeElement.value;
+    this.carName = name.value;
     this.carEmitter.emit(new Car(this.carName, this.year));
     this.carName  = '';
     this.year = 2017;

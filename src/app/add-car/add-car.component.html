@@ -1,3 +1,5 @@
-<input class="form-control" [(ngModel)]="carName">
-<input class="form-control" [(ngModel)]="year">
-<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+<!--<input class="form-control" [(ngModel)]="carName">-->
+<!--<input class="form-control" [(ngModel)]="year">-->
+<input class="form-control" #carNameInput>
+<input class="form-control" #carYearInput>
+<button class="btn btn-primary" (click)="addCar(carNameInput)">Добавить машину</button><!-- передача  в компонент дом элемента с помощью референции-->
