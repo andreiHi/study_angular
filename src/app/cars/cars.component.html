@@ -2,5 +2,10 @@
 <hr>
 <app-add-car (carEmitter)="updateCarList($event)"></app-add-car>
 <hr>
-<!-- [] передача данных в дочерний компонент с помощью байдинга -->
-<app-car *ngFor="let car of cars" [carItem]="car"></app-car> <!-- значение car передается в компанент с помощью  [carItem]="car"-->
+<div class="list-group">
+    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+        <h4 #carHeading class="list-group-item-heading">Название : {{ car.name}}</h4>
+        <p class="list-group-item-text">Год: {{ car.year}}</p>
+    </app-car>
+</div>
+
