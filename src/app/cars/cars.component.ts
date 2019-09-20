@@ -15,16 +15,25 @@ export class CarsComponent {
     cars: Car[] = [{
         name: 'Ford',
         year: 2015
-    }, {
+    }
+    , {
         name: 'Audi',
         year: 2010
     }, {
         name: 'BMW',
         year: 2011
-    }];
+    }
+    ];
 
     updateCarList(car: Car) {
         this.cars.push(car);
     }
 
+    changeCarName() {
+        this.cars[0].name = 'New car Name!';
+    }
+
+    deleteCar() {
+        this.cars.splice(0, 1);
+    }
 }

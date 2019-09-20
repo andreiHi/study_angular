@@ -2,8 +2,11 @@
 <hr>
 <app-add-car (carEmitter)="updateCarList($event)"></app-add-car>
 <hr>
+<button class="btn btn-success" (click)="changeCarName()">Изменить имя машины</button>
+<button class="btn btn-danger" (click)="deleteCar()">Удалить машину</button>
+<hr>
 <div class="list-group">
-    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car">
+    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" [name]="car.name">
         <h4 #carHeading class="list-group-item-heading">Название : {{ car.name}}</h4>
         <p class="list-group-item-text">Год: {{ car.year}}</p>
     </app-car>
