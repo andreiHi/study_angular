@@ -12,6 +12,8 @@ import {BackgroundDirective} from './directives/background.directive';
 import { DirectiveDirective } from './directive.directive';
 import { ForPipesComponent } from './pipe/for-pipes.component';
 import { PowPipe } from './pipe/pow.pipe';
+import { DynamicComponent } from './filter/dynamic.component';
+import {CarFilterPipe} from './filter/carFilterPipe';
 
 
 
@@ -25,7 +27,9 @@ import { PowPipe } from './pipe/pow.pipe';
         BackgroundDirective,
         DirectiveDirective,
         ForPipesComponent,
-        PowPipe
+        PowPipe,
+        DynamicComponent,
+        CarFilterPipe
     ],
     imports: [
         BrowserModule,
