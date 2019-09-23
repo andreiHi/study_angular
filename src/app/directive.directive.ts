@@ -1,10 +1,12 @@
-import {Directive, ElementRef, HostBinding, HostListener} from '@angular/core';
+import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit} from '@angular/core';
 
 @Directive({
   selector: '[appDirectiv]'
 })
-export class DirectiveDirective {
+export class DirectiveDirective implements OnInit {
 
+  @Input('appDirectiv')hoverColor = 'green';
+  @Input()defaultColor = 'transparent';
   @HostBinding('style.backgroundColor') background: string;
 
   constructor(private el: ElementRef) {
@@ -12,11 +14,15 @@ export class DirectiveDirective {
   }
 
   @HostListener('mouseenter') mouseEnter() {
-    this.background = 'red';
+    this.background = this.hoverColor;
   }
 
   @HostListener('mouseleave') mouseLeave() {
-    this.background = 'transparent';
+    this.background = this.defaultColor;
+  }
+
+  ngOnInit(): void {
+    this.background = this.defaultColor;
   }
 
 }
