@@ -1,7 +1,8 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-    name: 'appFilter'
+    name: 'appFilter',
+    pure: false // позволяет применять фильтр к изменяемому массиву но страдает производительность
 })
 export class CarFilterPipe implements PipeTransform {
     /**
@@ -12,6 +13,7 @@ export class CarFilterPipe implements PipeTransform {
      */
 
     transform(carList, searchString: string, fieldName: string) {
+        console.log('Filter pipe started.');
         if (carList.length === 0 || searchString === '' || searchString === undefined) {
             return carList;
         } else {

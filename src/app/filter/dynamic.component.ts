@@ -21,4 +21,10 @@ export class DynamicComponent implements OnInit {
   }
 
 
+  addCar() {
+    this.cars.push({
+          name: 'New car',
+          descr: 'WFM'
+        });
+  }
 }
