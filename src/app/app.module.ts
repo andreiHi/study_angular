@@ -10,6 +10,10 @@ import { AddCarComponent } from './add-car/add-car.component';
 import { DirComponent } from './dir/dir.component';
 import {BackgroundDirective} from './directives/background.directive';
 import { DirectiveDirective } from './directive.directive';
+import { ForPipesComponent } from './pipe/for-pipes.component';
+import { PowPipe } from './pipe/pow.pipe';
+
+
 
 @NgModule({
     declarations: [
@@ -19,7 +23,9 @@ import { DirectiveDirective } from './directive.directive';
         AddCarComponent,
         DirComponent,
         BackgroundDirective,
-        DirectiveDirective
+        DirectiveDirective,
+        ForPipesComponent,
+        PowPipe
     ],
     imports: [
         BrowserModule,
