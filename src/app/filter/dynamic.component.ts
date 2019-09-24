@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {from, fromEvent, Observable, Observer, of, Subscriber} from 'rxjs';
+import {delay, map} from 'rxjs/operators';
+
+
 
 @Component({
   selector: 'app-dynamic',
@@ -15,6 +19,13 @@ export class DynamicComponent implements OnInit {
   ];
   searchCar: string;
 
+  asyncTitle = new Observable<string>((ob: Observer<string>) => {
+    setInterval(() => ob.next('Динамический фильтр'), 3000);
+  });
+
+  time = new Observable<string>((observer: Observer<string>) => {
+    setInterval(() => observer.next(new Date().toString()), 1000);
+  });
   constructor() { }
 
   ngOnInit() {

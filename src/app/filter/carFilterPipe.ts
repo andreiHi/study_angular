@@ -2,7 +2,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
     name: 'appFilter',
-    pure: false // позволяет применять фильтр к изменяемому массиву но страдает производительность
+   // pure: false // позволяет применять фильтр к изменяемому массиву но страдает производительность
 })
 export class CarFilterPipe implements PipeTransform {
     /**

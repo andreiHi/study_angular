@@ -1,5 +1,6 @@
 <hr>
-<h3>Динамический фильтр</h3>
+<h3>{{ asyncTitle | async}}</h3>
+<h3>{{ time | async | date:'medium'}}</h3>
 <div class="col-sm-8">
     <input class="form-control" [(ngModel)]="searchCar" >
     <button class="btn btn-primary" (click)="addCar()">Добавить</button>
