@@ -9,17 +9,12 @@ import {Car} from '../car/car';
 export class AddCarComponent {
 
   carName = '';
-  year = 2017;
+  year;
   @Output()carEmitter = new EventEmitter<Car>();
 
-  // @ts-ignore
-  @ViewChild('carYearInput') carYearInput: ElementRef;
-
-  addCar(name: HTMLInputElement) {
-    this.year = +this.carYearInput.nativeElement.value;
-    this.carName = name.value;
-    this.carEmitter.emit(new Car(this.carName, this.year));
+  addCar() {
+    this.carEmitter.emit(new Car(this.carName, this.year, false));
     this.carName  = '';
-    this.year = 2017;
+    this.year = '';
   }
 }

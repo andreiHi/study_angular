@@ -5,8 +5,8 @@ import {Car} from '../car/car';
     selector: 'app-cars',
     templateUrl: './cars.component.html',
     styleUrls: ['./cars.component.scss']
-     // encapsulation: ViewEncapsulation.None отменяет локальную видимость css и они распростроняются на все дочернии компоненты
-     // encapsulation: ViewEncapsulation.Native отменяет все  css и бутстрап в том числе
+    // encapsulation: ViewEncapsulation.None отменяет локальную видимость css и они распростроняются на все дочернии компоненты
+    // encapsulation: ViewEncapsulation.Native отменяет все  css и бутстрап в том числе
 })
 export class CarsComponent {
 
@@ -14,18 +14,20 @@ export class CarsComponent {
 
     cars: Car[] = [{
         name: 'Ford',
-        year: 2015
-    }
-    , {
+        year: 2015,
+        isSold: false
+    }, {
         name: 'Audi',
-        year: 2010
+        year: 2010,
+        isSold: false
     }, {
         name: 'BMW',
-        year: 2011
+        year: 2011,
+        isSold: true
     }
     ];
 
-    updateCarList(car: Car) {
+    addCarToList(car: Car) {
         this.cars.push(car);
     }
 

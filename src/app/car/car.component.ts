@@ -9,10 +9,17 @@ import {Car} from './car';
 export class CarComponent {
 
   @Input() carItem: Car;
-  @Input() name: string;
-
-  // @ts-ignore
-  @ContentChild('carHeading') carHeading: ElementRef; // позволяет получить данные из ng-content
 
 
+  getClass() {
+    return {
+      'list-group-item-success': !this.carItem.isSold,
+      'list-group-item-danger': this.carItem.isSold,
+      'list-group-item': true,
+    };
+  }
+
+  onAction(type: string) {
+    this.carItem.isSold = type === 'buy';
+  }
 }
