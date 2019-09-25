@@ -15,6 +15,7 @@ import { PowPipe } from './pipe/pow.pipe';
 import { DynamicComponent } from './filter/dynamic.component';
 import {CarFilterPipe} from './filter/carFilterPipe';
 import {CarsService} from 'app/cars.service';
+import {ConsoleService} from 'app/console.service';
 
 
 
@@ -37,7 +38,7 @@ import {CarsService} from 'app/cars.service';
         AppRoutingModule,
         FormsModule
     ],
-  providers: [CarsService],
+  providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,8 @@
 import {Car} from 'app/car/car';
+import {ConsoleService} from 'app/console.service';
+import {Injectable} from '@angular/core';
 
+@Injectable() // говорит о том что в данный класс можно что либо инжектить
 export class CarsService {
     cars: Car[] = [{
         name: 'Ford',
@@ -15,8 +18,10 @@ export class CarsService {
         isSold: true
     }
     ];
+constructor(private consoleService: ConsoleService) {}
 
     addCar(car: Car) {
         this.cars.push(car);
+        this.consoleService.log(`Машина ${car.name} была добавлена`);
     }
 }

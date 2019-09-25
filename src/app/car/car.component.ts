@@ -1,12 +1,10 @@
-import {Component, ContentChild, ElementRef, Input} from '@angular/core';
-import { ConsoleService} from '../console.service';
+import {Component, Input} from '@angular/core';
+import {ConsoleService} from '../console.service';
 import {Car} from './car';
 
 @Component({
   selector: 'app-car',
-  templateUrl: './car.component.html',
-  styleUrls: ['./car.component.scss'],
-  providers: [ConsoleService]
+  templateUrl: './car.component.html'
 })
 export class CarComponent {
 
