@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car} from '../car/car';
+import {CarsService} from '../cars.service';
 
 @Component({
     selector: 'app-cars',
@@ -8,34 +9,18 @@ import {Car} from '../car/car';
     // encapsulation: ViewEncapsulation.None отменяет локальную видимость css и они распростроняются на все дочернии компоненты
     // encapsulation: ViewEncapsulation.Native отменяет все  css и бутстрап в том числе
 })
-export class CarsComponent {
+export class CarsComponent implements OnInit {
 
-    constructor() { }
+    cars: Car[] = [];
+    constructor(private service: CarsService) { }
 
-    cars: Car[] = [{
-        name: 'Ford',
-        year: 2015,
-        isSold: false
-    }, {
-        name: 'Audi',
-        year: 2010,
-        isSold: false
-    }, {
-        name: 'BMW',
-        year: 2011,
-        isSold: true
-    }
-    ];
+
 
     addCarToList(car: Car) {
-        this.cars.push(car);
+        this.service.addCar(car);
     }
 
-    changeCarName() {
-        this.cars[0].name = 'New car Name!';
-    }
-
-    deleteCar() {
-        this.cars.splice(0, 1);
+    ngOnInit(): void {
+        this.cars = this.service.cars;
     }
 }

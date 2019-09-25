@@ -1,6 +1,6 @@
 <p>Форма добавления машины</p>
 <hr>
-<app-add-car (carEmitter)="addCarToList($event)"></app-add-car>
+<app-add-car></app-add-car>
 <hr>
 <div class="list-group">
     <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" >
