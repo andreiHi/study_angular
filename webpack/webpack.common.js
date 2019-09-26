@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const rxPaths = require('rxjs/_esm5/path-mapping');
 const utils = require('./utils.js');
+const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
 
 module.exports = (options) => ({
     resolve: {
@@ -49,6 +50,10 @@ module.exports = (options) => ({
             },
             // Ignore warnings about System.import in Angular
             { test: /[\/\\]@angular[\/\\].+\.js$/, parser: { system: true } },
+            {
+                test: /bootstrap\/dist\/js\/umd\//,
+                loader: 'imports?jQuery=jquery'
+            }
         ]
     },
     plugins: [
@@ -83,6 +88,25 @@ module.exports = (options) => ({
             chunksSortMode: 'manual',
             inject: 'body'
         }),
-        new BaseHrefWebpackPlugin({ baseHref: '/' })
+        new BaseHrefWebpackPlugin({ baseHref: '/' }),
+        new HtmlWebpackExternalsPlugin({
+            externals: [
+                {
+                    module: 'jquery',
+                    entry: 'dist/jquery.min.js',
+                    global: 'jQuery',
+                },
+                {
+                    module: 'popper.js',
+                    entry: 'dist/umd/popper.min.js',
+                    global: 'popper',
+                },
+                {
+                    module: 'bootstrap',
+                    entry: 'dist/js/bootstrap.min.js',
+                    global: 'bootstrap',
+                }
+            ],
+        })
     ]
 });

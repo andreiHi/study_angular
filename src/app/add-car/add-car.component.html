@@ -1,10 +1,18 @@
-<input
-        [ngStyle]="{marginBottom: '10px'}"
-        type="text"  class="form-control"
-        [(ngModel)]="carName" placeholder="Brand">
+<div class="row">
+    <div class="col-md-2">
+    <input
+            [ngStyle]="{marginBottom: '10px'}"
+            type="text"  class="form-control"
+            [(ngModel)]="carName" placeholder="Brand">
 
-<input
-        [ngStyle]="{marginBottom: '10px'}"
-        type="number" class="form-control"
-        [(ngModel)]="year" placeholder="Year">
-<button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+    </div>
+    <div class="col-md-2">
+    <input
+            [ngStyle]="{marginBottom: '10px'}"
+            type="number" class="form-control"
+            [(ngModel)]="year" placeholder="Year">
+    </div>
+    <div class="col-md-2">
+    <button class="btn btn-primary" (click)="addCar()">Добавить машину</button>
+    </div>
+</div>
