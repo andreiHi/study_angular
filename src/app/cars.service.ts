@@ -1,5 +1,5 @@
-import {Car} from 'app/car/car';
-import {ConsoleService} from 'app/console.service';
+import {Car} from './car/car';
+import {ConsoleService} from './console.service';
 import {Injectable} from '@angular/core';
 
 @Injectable() // говорит о том что в данный класс можно что либо инжектить

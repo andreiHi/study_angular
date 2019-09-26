@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {DirComponent} from 'app/dir/dir.component';
-import {ForPipesComponent} from 'app/pipe/for-pipes.component';
-import {DynamicComponent} from 'app/filter/dynamic.component';
-import {CarsComponent} from 'app/cars/cars.component';
+import {DirComponent} from './dir/dir.component';
+import {ForPipesComponent} from './pipe/for-pipes.component';
+import {DynamicComponent} from './filter/dynamic.component';
+import {CarsComponent} from './cars/cars.component';
 
 
 const routes: Routes = [

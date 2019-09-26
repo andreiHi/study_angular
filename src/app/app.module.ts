@@ -14,8 +14,8 @@ import { ForPipesComponent } from './pipe/for-pipes.component';
 import { PowPipe } from './pipe/pow.pipe';
 import { DynamicComponent } from './filter/dynamic.component';
 import {CarFilterPipe} from './filter/carFilterPipe';
-import {CarsService} from 'app/cars.service';
-import {ConsoleService} from 'app/console.service';
+import {CarsService} from './cars.service';
+import {ConsoleService} from './console.service';
 
 
 
