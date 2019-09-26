@@ -16,6 +16,7 @@ import { DynamicComponent } from './filter/dynamic.component';
 import {CarFilterPipe} from './filter/carFilterPipe';
 import {CarsService} from './cars.service';
 import {ConsoleService} from './console.service';
+import { FormComponent } from './form/form.component';
 
 
 
@@ -31,7 +32,8 @@ import {ConsoleService} from './console.service';
         ForPipesComponent,
         PowPipe,
         DynamicComponent,
-        CarFilterPipe
+        CarFilterPipe,
+        FormComponent
     ],
     imports: [
         BrowserModule,
