@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {Check} from './check';
 
@@ -19,12 +19,34 @@ export class FormComponent implements OnInit {
 
   defaultAnswer = 'no';
   defaultCountry = 'ru';
+  formDate = { };
+  isSubmited = false;
+  // @ts-ignore
+  @ViewChild('form') form: NgForm;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  submitForm(form: NgForm) {
-    console.log(form);
+  submitForm() {
+    this.isSubmited = true;
+    this.formDate = this.form.value;
+    this.form.reset();
+  }
+
+  addRandEmail() {
+    const randEmail = 'sss@gmail.com';
+    // this.form.setValue({  использовать не очень хорошо так как стирает все что было заполнено в остальной форме
+    //   user: {
+    //     pass: '',
+    //     email: randEmail
+    //   },
+    //   country: '',
+    //   answer: ''
+    // });
+    this.form.form.patchValue({
+      user: {email: randEmail }
+    });
   }
 }
