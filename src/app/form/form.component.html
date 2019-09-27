@@ -1,35 +1,38 @@
 <div class="col-xs-8 col-xs-offset-2">
     <form  (ngSubmit)="submitForm(form)" #form="ngForm">
-        <div class="form-group">
-            <label>Email</label>
-            <input  [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
-                    type="text"
-                    class="form-control"
-                    ngModel
-                    name="email"
-                    required
-                    email
-                    #email="ngModel"
-            >
-            <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+        <div ngModelGroup="user" #user="ngModelGroup">
+            <div class="form-group">
+                <label>Email</label>
+                <input  [ngClass]="{ 'is-invalid': email.invalid && email.touched }"
+                        type="text"
+                        class="form-control"
+                        ngModel
+                        name="email"
+                        required
+                        email
+                        #email="ngModel"
+                >
+                <p *ngIf="email.invalid && email.touched">Введите корректный email</p>
+            </div>
+            <div class="form-group">
+                <label>Пароль</label>
+                <input  [ngClass]="{ 'is-invalid': pass.invalid && pass.touched }"
+                        type="password"
+                        class="form-control"
+                        ngModel
+                        name="password"
+                        required
+                        #pass="ngModel"
+                >
+                <p *ngIf="pass.invalid && pass.touched">Пароль не должен быть пустым</p>
+            </div>
         </div>
-        <div class="form-group">
-            <label>Пароль</label>
-            <input  [ngClass]="{ 'is-invalid': pass.invalid && pass.touched }"
-                    type="password"
-                    class="form-control"
-                    ngModel
-                    name="password"
-                    required
-                    #pass="ngModel"
-            >
-            <p *ngIf="pass.invalid && pass.touched">Пароль не должен быть пустым</p>
-        </div>
+        <p *ngIf="user.invalid && user.touched">Данные пользователя введены не корректно</p>
         <div class="form-group">
             <label>Выберите страну</label>
             <select
                     class="form-control"
-                    ngModel
+                    [ngModel]="defaultCountry"
                     name="country"
                     required
             >
@@ -44,7 +47,7 @@
                         required
                         type="radio"
                         [value]="ans.type"
-                        ngModel
+                        [ngModel]="defaultAnswer"
                         name="answer"
                 > {{ans.text}}
             </label>

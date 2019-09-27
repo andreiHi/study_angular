@@ -17,6 +17,8 @@ export class FormComponent implements OnInit {
       type: 'no', text: 'Нет'
     }];
 
+  defaultAnswer = 'no';
+  defaultCountry = 'ru';
   constructor() { }
 
   ngOnInit() {
