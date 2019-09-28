@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarComponent } from './car/car.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddCarComponent } from './add-car/add-car.component';
 import { DirComponent } from './dir/dir.component';
 import {BackgroundDirective} from './directives/background.directive';
@@ -17,6 +17,7 @@ import {CarFilterPipe} from './filter/carFilterPipe';
 import {CarsService} from './cars.service';
 import {ConsoleService} from './console.service';
 import { FormComponent } from './form/form.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -33,12 +34,14 @@ import { FormComponent } from './form/form.component';
         PowPipe,
         DynamicComponent,
         CarFilterPipe,
-        FormComponent
+        FormComponent,
+        RegisterComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]

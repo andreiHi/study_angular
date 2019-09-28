@@ -5,6 +5,7 @@ import {ForPipesComponent} from './pipe/for-pipes.component';
 import {DynamicComponent} from './filter/dynamic.component';
 import {CarsComponent} from './cars/cars.component';
 import {FormComponent} from './form/form.component';
+import {RegisterComponent} from './register/register.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'directive', component: DirComponent},
   {path: 'pipes', component: ForPipesComponent},
   {path: 'dynamic', component: DynamicComponent},
-  {path: 'login', component: FormComponent}
+  {path: 'login', component: FormComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
