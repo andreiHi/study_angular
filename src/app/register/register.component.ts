@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
       type: 'no', text: 'Нет'
     }];
   form: FormGroup;
+  charsCount = 5;
 
   constructor() { }
 
@@ -24,8 +25,8 @@ export class RegisterComponent implements OnInit {
     this.form = new FormGroup({ // создаем экземпляр и передаем все контролы из формы
       user: new FormGroup({
         email: new FormControl('', [Validators.required, Validators.email]),
-        pass: new FormControl('', Validators.required)
-      }),
+        pass: new FormControl('', [this.checkForLength.bind(this), Validators.required]) // для того чтоб передать в валидатор поле
+      }),                                                                                        // из класса нужно использовать bind(this)
       country: new FormControl('ru'),
       answer: new FormControl('no')
     });
@@ -33,5 +34,14 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log('Submited', this.form);
+  }
+
+  checkForLength(control: FormControl) {
+    if (control.value.length <= this.charsCount) {
+      return {
+        'lengthError': true
+      };
+    }
+    return null;
   }
 }
