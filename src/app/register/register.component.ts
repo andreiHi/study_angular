@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Check} from '../form/check';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -22,8 +22,8 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({ // создаем экземпляр и передаем все контролы из формы
-      email: new FormControl(''),
-      pass: new FormControl(''),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      pass: new FormControl('', Validators.required),
       country: new FormControl('ru'),
       answer: new FormControl('no')
     });
