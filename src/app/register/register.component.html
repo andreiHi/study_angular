@@ -8,7 +8,10 @@
                         type="text"
                         class="form-control"
                 >
-                <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">Введите корректный email</p>
+                <p *ngIf="form.get('user.email').invalid && form.get('user.email').touched">
+                    <span *ngIf="form.get('user.email').errors['email']">Введите корректный email</span>
+                    <span *ngIf="form.get('user.email').errors['emailIsUsed']">Такой email уже существует</span>
+                </p>
             </div>
             <div class="form-group">
                 <label>Пароль</label>
