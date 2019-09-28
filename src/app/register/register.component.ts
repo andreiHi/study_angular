@@ -22,8 +22,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({ // создаем экземпляр и передаем все контролы из формы
-      email: new FormControl('', [Validators.required, Validators.email]),
-      pass: new FormControl('', Validators.required),
+      user: new FormGroup({
+        email: new FormControl('', [Validators.required, Validators.email]),
+        pass: new FormControl('', Validators.required)
+      }),
       country: new FormControl('ru'),
       answer: new FormControl('no')
     });
