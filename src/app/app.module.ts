@@ -18,6 +18,7 @@ import {CarsService} from './cars.service';
 import {ConsoleService} from './console.service';
 import { FormComponent } from './form/form.component';
 import { RegisterComponent } from './register/register.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -41,7 +42,8 @@ import { RegisterComponent } from './register/register.component';
         BrowserModule,
         AppRoutingModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        HttpClientModule
     ],
   providers: [CarsService, ConsoleService],
   bootstrap: [AppComponent]

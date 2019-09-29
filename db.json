@@ -1,9 +1,21 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "cars": [
+    {
+      "name": "Ford",
+      "year": 2015,
+      "id": 1,
+      "isSold": "false"
+    }, {
+      "name": "Audi",
+      "year": 2010,
+      "id": 2,
+      "isSold": "false"
+    },
+    {
+      "name": "BMW",
+      "year": 2011,
+      "id": 3,
+      "isSold": "true"
+    }
+  ]
 }

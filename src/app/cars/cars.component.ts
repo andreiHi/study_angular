@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {Car} from '../car/car';
 import {CarsService} from '../cars.service';
 
@@ -9,7 +9,7 @@ import {CarsService} from '../cars.service';
     // encapsulation: ViewEncapsulation.None отменяет локальную видимость css и они распростроняются на все дочернии компоненты
     // encapsulation: ViewEncapsulation.Native отменяет все  css и бутстрап в том числе
 })
-export class CarsComponent implements OnInit {
+export class CarsComponent {
 
     cars: Car[] = [];
     constructor(private service: CarsService) { }
@@ -20,7 +20,10 @@ export class CarsComponent implements OnInit {
         this.service.addCar(car);
     }
 
-    ngOnInit(): void {
-        this.cars = this.service.cars;
+
+    loadCars() {
+        this.service.getCars().subscribe((response) => {
+            console.log(response);
+        });
     }
 }

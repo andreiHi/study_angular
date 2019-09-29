@@ -15,7 +15,7 @@ export class AddCarComponent {
   constructor(private service: CarsService) {}
 
   addCar() {
-    this.service.addCar(new Car(this.carName, this.year, false));
+    this.service.addCar(new Car(this.carName, this.year));
     this.carName  = '';
     this.year = '';
   }
