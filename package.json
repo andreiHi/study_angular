@@ -20,6 +20,7 @@
     "bootstrap": "4.3.1",
     "core-js": "2.6.5",
     "jquery": "^3.4.1",
+    "json-server": "^0.15.1",
     "moment": "2.24.0",
     "ngx-cookie": "4.0.2",
     "ngx-infinite-scroll": "7.2.0",
@@ -123,6 +124,7 @@
     "webpack:test": "yarn run test",
     "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js",
-    "postinstall": "node node_modules/phantomjs-prebuilt/install.js"
+    "postinstall": "node node_modules/phantomjs-prebuilt/install.js",
+    "jsonServer": "json-server --watch db.json"
   }
 }

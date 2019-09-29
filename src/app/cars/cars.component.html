@@ -1,9 +1,12 @@
-<p>Форма добавления машины</p>
-<hr>
-<app-add-car></app-add-car>
-<hr>
-<div class="list-group">
-    <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" >
-    </app-car>
+<div class="col-sm-12 col-sm-offset-2">
+    <p>Форма добавления машины</p>
+    <hr>
+    <app-add-car></app-add-car>
+    <hr>
+    <button class="btn btn-primary">Загрузить машины</button>
+    <hr>
+    <div class="list-group">
+        <app-car class="list-group-item" *ngFor="let car of cars" [carItem]="car" >
+        </app-car>
+    </div>
 </div>
-
