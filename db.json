@@ -4,18 +4,18 @@
       "name": "Ford",
       "year": 2015,
       "id": 1,
-      "isSold": "false"
+      "isSold": false
     }, {
       "name": "Audi",
       "year": 2010,
       "id": 2,
-      "isSold": "false"
+      "isSold": false
     },
     {
       "name": "BMW",
       "year": 2011,
       "id": 3,
-      "isSold": "true"
+      "isSold": true
     }
   ]
 }

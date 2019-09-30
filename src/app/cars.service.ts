@@ -14,6 +14,6 @@ export class CarsService {
     }
 
     getCars() {
-        return this.http.get('/cars');
+        return this.http.get<Car[]>('/cars');
     }
 }

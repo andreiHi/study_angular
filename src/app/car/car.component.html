@@ -1,5 +1,5 @@
 <div [ngClass]="getClass()">
-    <h4 [ngStyle]="{marginBottom: '20px'}">{{ carItem.name }}</h4>
+    <h4 [ngStyle]="{marginBottom: '20px'}">{{ carItem.name }} <span class="badge">ID: {{carItem.id}}</span></h4>
     <div>
         <button class="btn btn-sm btn-primary"
                 [disabled]="carItem.isSold"

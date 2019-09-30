@@ -22,8 +22,10 @@ export class CarsComponent {
 
 
     loadCars() {
-        this.service.getCars().subscribe((response) => {
-            console.log(response);
+        this.service.getCars().subscribe((cars) => {
+      //      const data = response.json();
+            console.log(cars);
+            this.cars = cars;
         });
     }
 }
