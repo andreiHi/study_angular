@@ -4,29 +4,34 @@
       "name": "Ford",
       "year": 2015,
       "id": 1,
-      "isSold": false
+      "isSold": true,
+      "color": "blue"
     },
     {
       "name": "Audi",
       "year": 2010,
       "id": 2,
-      "isSold": false
+      "isSold": false,
+      "color": "yellow"
     },
     {
       "name": "BMW",
       "year": 2011,
       "id": 3,
-      "isSold": true
+      "isSold": true,
+      "color": "green"
     },
     {
       "name": "audi",
       "year": 1252,
-      "id": 4
+      "id": 4,
+      "color": "grey"
     },
     {
       "name": "Lada",
       "year": 2010,
-      "id": 5
+      "id": 5,
+      "color": "blue"
     }
   ]
 }

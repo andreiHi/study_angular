@@ -16,4 +16,14 @@ export class CarsService {
     getCars() {
         return this.http.get<Car[]>('/cars');
     }
+
+    changeColor(car: Car, color: string) {
+        car.color = color;
+        return this.http.put(`/cars/${car.id}`,  car);
+    }
+
+    changeBuy(car: Car, isSold: boolean) {
+        car.isSold = isSold;
+        return this.http.put(`/cars/${car.id}`, car);
+    }
 }
