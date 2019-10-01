@@ -25,4 +25,9 @@ export class CarsComponent {
     updateArray(car: Car) {
         this.cars.push(car);
     }
+
+    deleteCar(id: number) {
+        this.cars = this.cars.filter(c => c.id !== id);
+
+    }
 }

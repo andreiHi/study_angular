@@ -26,4 +26,8 @@ export class CarsService {
         car.isSold = isSold;
         return this.http.put(`/cars/${car.id}`, car);
     }
+
+    delete(car: Car) {
+        return this.http.delete(`/cars/${car.id}`);
+    }
 }

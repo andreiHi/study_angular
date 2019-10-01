@@ -1,13 +1,6 @@
 {
   "cars": [
     {
-      "name": "Ford",
-      "year": 2015,
-      "id": 1,
-      "isSold": true,
-      "color": "blue"
-    },
-    {
       "name": "Audi",
       "year": 2010,
       "id": 2,
@@ -16,22 +9,8 @@
     },
     {
       "name": "BMW",
-      "year": 2011,
-      "id": 3,
-      "isSold": true,
-      "color": "green"
-    },
-    {
-      "name": "audi",
-      "year": 1252,
-      "id": 4,
-      "color": "grey"
-    },
-    {
-      "name": "Lada",
-      "year": 2010,
-      "id": 5,
-      "color": "blue"
+      "year": 2017,
+      "id": 3
     }
   ]
 }

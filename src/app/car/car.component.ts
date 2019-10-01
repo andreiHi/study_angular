@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ConsoleService} from '../console.service';
 import {Car} from './car';
 import {CarsService} from '../cars.service';
@@ -18,6 +18,7 @@ export class CarComponent {
       'yellow',
       'grey'
   ];
+  @Output() carDeleteEmitter = new EventEmitter();
 
 constructor(private service: ConsoleService, private carService: CarsService) {}
   getClass() {
@@ -42,5 +43,12 @@ constructor(private service: ConsoleService, private carService: CarsService) {}
   setNewColor() {
       console.log(this.carItem.id);
       this.carService.changeColor(this.carItem, this.getRandomColor()).subscribe((data) => console.log(data));
+  }
+
+  deleteCar() {
+    this.carService.delete(this.carItem).subscribe((data) => {
+      this.service.log(data.toString());
+      this.carDeleteEmitter.emit(this.carItem.id);
+    });
   }
 }
