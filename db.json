@@ -5,7 +5,8 @@
       "year": 2015,
       "id": 1,
       "isSold": false
-    }, {
+    },
+    {
       "name": "Audi",
       "year": 2010,
       "id": 2,
@@ -16,6 +17,16 @@
       "year": 2011,
       "id": 3,
       "isSold": true
+    },
+    {
+      "name": "audi",
+      "year": 1252,
+      "id": 4
+    },
+    {
+      "name": "Lada",
+      "year": 2010,
+      "id": 5
     }
   ]
 }

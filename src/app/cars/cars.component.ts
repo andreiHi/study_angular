@@ -14,18 +14,15 @@ export class CarsComponent {
     cars: Car[] = [];
     constructor(private service: CarsService) { }
 
-
-
-    addCarToList(car: Car) {
-        this.service.addCar(car);
-    }
-
-
     loadCars() {
         this.service.getCars().subscribe((cars) => {
       //      const data = response.json();
             console.log(cars);
             this.cars = cars;
         });
+    }
+
+    updateArray(car: Car) {
+        this.cars.push(car);
     }
 }

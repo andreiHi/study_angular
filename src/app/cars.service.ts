@@ -9,8 +9,8 @@ export class CarsService {
     constructor(private consoleService: ConsoleService, private http: HttpClient) {}
 
     addCar(car: Car) {
-        // this.cars.push(car);
         this.consoleService.log(`Машина ${car.name} была добавлена`);
+        return this.http.post('/cars', car);
     }
 
     getCars() {
