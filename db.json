@@ -10,7 +10,8 @@
     {
       "name": "BMW",
       "year": 2017,
-      "id": 3
+      "id": 3,
+      "isSold": false
     }
   ]
 }

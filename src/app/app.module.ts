@@ -18,7 +18,8 @@ import {CarsService} from './cars.service';
 import {ConsoleService} from './console.service';
 import { FormComponent } from './form/form.component';
 import { RegisterComponent } from './register/register.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AppInterceptor} from './http/app-interceptor';
 
 
 
@@ -45,7 +46,9 @@ import {HttpClientModule} from '@angular/common/http';
         ReactiveFormsModule,
         HttpClientModule
     ],
-  providers: [CarsService, ConsoleService],
+  providers: [CarsService, ConsoleService,
+      {provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
