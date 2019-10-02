@@ -14,17 +14,21 @@ export class CarsComponent implements OnInit {
 
     cars: Car[] = [];
     loading = false;
+    error = '';
     constructor(private service: CarsService) { }
 
     loadCars() {
         this.loading = true;
         this.service.getCars()
-            .pipe(delay(500)) // эмуляция работы сервера
+   //         .pipe(delay(500)) // эмуляция работы сервера
             .subscribe((cars) => {
             console.log(cars);
             this.cars = cars;
             this.loading = false;
-        });
+        }, error => {
+                this.error = error.message;
+            }
+        );
     }
 
     updateArray(car: Car) {

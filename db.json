@@ -5,7 +5,7 @@
       "year": 2010,
       "id": 2,
       "isSold": false,
-      "color": "yellow"
+      "color": "pink"
     },
     {
       "name": "BMW",
@@ -17,6 +17,11 @@
       "name": "Lada",
       "year": 2017,
       "id": 4
+    },
+    {
+      "name": "Bently",
+      "year": 2015,
+      "id": 5
     }
   ]
 }
