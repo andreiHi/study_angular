@@ -30,7 +30,6 @@ export class AppInterceptor implements HttpInterceptor {
             url: `${this.url}${req.url}`,
             headers
             });
-        console.log(request);
         return next.handle(request);
     }
 }

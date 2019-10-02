@@ -12,6 +12,11 @@
       "year": 2017,
       "id": 3,
       "isSold": false
+    },
+    {
+      "name": "Lada",
+      "year": 2017,
+      "id": 4
     }
   ]
 }

@@ -1,15 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {BUILD_TIMESTAMP, SERVER_API_URL} from './app.constants';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'front';
 
-  ngOnInit(): void {
-    console.log(SERVER_API_URL);
-  }
+
 }
