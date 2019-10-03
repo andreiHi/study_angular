@@ -7,7 +7,7 @@ import {SERVER_API_URL} from '../app.constants';
 export class AppInterceptor implements HttpInterceptor {
     private url = '';
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
         if (!req.url.startsWith('http')) {
             this.url = `${SERVER_API_URL}`;

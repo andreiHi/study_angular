@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,15 @@ import { RegisterComponent } from './register/register.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppInterceptor} from './http/app-interceptor';
 
-
+/**
+ * Можно вынести в отдельную функцию
+ * и передовать в качестве параметра класс который нужно добавить
+ */
+const INTERCEPTOR_PROVIDER: Provider = {
+    provide: HTTP_INTERCEPTORS, // что это такое (тип сущности)
+    useClass: AppInterceptor, // какой класс использовать
+    multi: true // поддержка нескольких подобных сущностей
+};
 
 @NgModule({
     declarations: [
@@ -46,8 +54,8 @@ import {AppInterceptor} from './http/app-interceptor';
         ReactiveFormsModule,
         HttpClientModule
     ],
-  providers: [CarsService, ConsoleService,
-      {provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true}
+  providers: [
+      CarsService, ConsoleService, INTERCEPTOR_PROVIDER
   ],
   bootstrap: [AppComponent]
 })
