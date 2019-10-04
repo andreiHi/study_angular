@@ -15,11 +15,11 @@ import { PowPipe } from './pipe/pow.pipe';
 import { DynamicComponent } from './filter/dynamic.component';
 import {CarFilterPipe} from './filter/carFilterPipe';
 import {CarsService} from './cars.service';
-import {ConsoleService} from './console.service';
 import { FormComponent } from './form/form.component';
 import { RegisterComponent } from './register/register.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppInterceptor} from './http/app-interceptor';
+import {ConsoleService} from 'app/console.service';
 
 /**
  * Можно вынести в отдельную функцию
@@ -55,7 +55,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
         HttpClientModule
     ],
   providers: [
-      CarsService, INTERCEPTOR_PROVIDER
+      CarsService, INTERCEPTOR_PROVIDER, ConsoleService
   ],
   bootstrap: [AppComponent]
 })
