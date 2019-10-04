@@ -27,7 +27,8 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
         }],
         watchOptions: {
             ignored: /node_modules/
-        }
+        },
+        historyApiFallback: true, // необходимо для роутинга
     },
     entry: {
         polyfills: './src/polyfills',

@@ -9,6 +9,11 @@
       "id": 2,
       "isSold": false,
       "color": "blue"
+    },
+    {
+      "name": "Vaz",
+      "year": 2018,
+      "id": 3
     }
   ]
 }

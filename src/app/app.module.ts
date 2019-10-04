@@ -55,7 +55,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
         HttpClientModule
     ],
   providers: [
-      CarsService, ConsoleService, INTERCEPTOR_PROVIDER
+      CarsService, INTERCEPTOR_PROVIDER
   ],
   bootstrap: [AppComponent]
 })
