@@ -3,7 +3,7 @@ import {ConsoleService} from './console.service';
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpEventType, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError, delay, map, tap} from 'rxjs/operators';
+import {catchError, delay, flatMap, map, tap} from 'rxjs/operators';
 
 @Injectable() // говорит о том что в данный класс можно что либо инжектить
 export class CarsService {
@@ -64,6 +64,12 @@ export class CarsService {
                     console.log('response', event);
                 }
             })
+        );
+    }
+
+    getAppTitle() {
+        return this.http.get<any>('/title').pipe(
+                map(data => data.value)
         );
     }
 }

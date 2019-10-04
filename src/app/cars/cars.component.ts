@@ -15,6 +15,7 @@ export class CarsComponent implements OnInit {
     cars: Car[] = [];
     loading = false;
     error = '';
+    appTitle;
     constructor(private service: CarsService) { }
 
     loadCars() {
@@ -40,7 +41,14 @@ export class CarsComponent implements OnInit {
 
     }
 
+    /**
+     * получаем объект Observable и присваиваем его переменной без подписки
+     * подписка происходит в шаблоне с помощью |async
+     * так же можно использовать для массивов добавив
+     * *ngFor="let car of cars" [carItem]="car" | async
+     */
     ngOnInit(): void {
+        this.appTitle = this.service.getAppTitle();
         this.loadCars();
     }
 }
