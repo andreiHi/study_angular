@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Car} from '../car/car';
 import {CarsService} from '../cars.service';
 import {delay} from 'rxjs/operators';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
     selector: 'app-cars',
@@ -16,7 +17,7 @@ export class CarsComponent implements OnInit {
     loading = false;
     error = '';
     appTitle;
-    constructor(private service: CarsService) { }
+    constructor(private service: CarsService, private router: Router, private rout: ActivatedRoute) { }
 
     loadCars() {
         this.loading = true;
@@ -50,5 +51,21 @@ export class CarsComponent implements OnInit {
     ngOnInit(): void {
         this.appTitle = this.service.getAppTitle();
         this.loadCars();
+    }
+
+    /**
+     * Использовыаание програмного перехода с помощью относительного пути
+     */
+    openDirective() {
+        this.router.navigate(['/directive']);
+    }
+
+    /**
+     * использование програмного перехода с помощью абсолютного пути
+     * relativeTo относительно чего нужно делать переход
+     * private rout: ActivatedRoute теккущий активный роут
+     */
+    openPipes() {
+        this.router.navigate(['pipes'], {relativeTo: this.rout});
     }
 }
