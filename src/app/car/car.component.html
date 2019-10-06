@@ -1,6 +1,12 @@
 <div [ngClass]="getClass()">
     <h4 [ngStyle]="{marginBottom: '20px'}">
-        <a [routerLink]="['/cars', carItem.id, carItem.name]">{{ carItem.name }}</a>
+        <a
+                [routerLink]="['/cars', carItem.id, carItem.name]"
+                [queryParams]="{year: carItem.year, color: carItem.color}"
+                fragment="pic"
+        > <!-- передача параметров и хэша -->
+            {{ carItem.name }}
+        </a>
         <span
                 class="badge badge-pill badge-secondary" [ngStyle]="{background: carItem.color}" >
             ID: {{carItem.id}}
