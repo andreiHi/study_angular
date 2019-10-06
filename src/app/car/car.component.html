@@ -1,5 +1,6 @@
 <div [ngClass]="getClass()">
-    <h4 [ngStyle]="{marginBottom: '20px'}">{{ carItem.name }}
+    <h4 [ngStyle]="{marginBottom: '20px'}">
+        <a [routerLink]="['/cars', carItem.id, carItem.name]">{{ carItem.name }}</a>
         <span
                 class="badge badge-pill badge-secondary" [ngStyle]="{background: carItem.color}" >
             ID: {{carItem.id}}

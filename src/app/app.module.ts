@@ -20,6 +20,7 @@ import { RegisterComponent } from './register/register.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppInterceptor} from './http/app-interceptor';
 import {ConsoleService} from 'app/console.service';
+import { CarPageComponent } from './car-page/car-page.component';
 
 /**
  * Можно вынести в отдельную функцию
@@ -45,7 +46,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         DynamicComponent,
         CarFilterPipe,
         FormComponent,
-        RegisterComponent
+        RegisterComponent,
+        CarPageComponent
     ],
     imports: [
         BrowserModule,

@@ -20,7 +20,7 @@ module.exports = (options) => webpackMerge(commonConfig({ env: ENV }), {
         contentBase: './target/classes/static/',
         proxy: [{
             context: [
-               '/cars'
+               // '/cars'
             ],
             target: `http://127.0.0.1:3000`,
             secure: false
