@@ -8,6 +8,7 @@ import {FormComponent} from './form/form.component';
 import {RegisterComponent} from './register/register.component';
 import {CarPageComponent} from './car-page/car-page.component';
 import {HomeComponent} from './home/home.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
   {path: 'pipes', component: ForPipesComponent},
   {path: 'dynamic', component: DynamicComponent},
   {path: 'login', component: FormComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

@@ -22,6 +22,7 @@ import {AppInterceptor} from './http/app-interceptor';
 import {ConsoleService} from 'app/console.service';
 import { CarPageComponent } from './car-page/car-page.component';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 /**
  * Можно вынести в отдельную функцию
@@ -49,7 +50,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         FormComponent,
         RegisterComponent,
         CarPageComponent,
-        HomeComponent
+        HomeComponent,
+        NotFoundComponent
     ],
     imports: [
         BrowserModule,
