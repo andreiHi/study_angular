@@ -6,20 +6,28 @@
     <hr>
     <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
     <hr>
+</div>
     <p *ngIf="error; else block" class="error">{{ error }}</p>
     <ng-template #block>
         <div *ngIf="!loading; else loadingBlock">
-            <div class="list-group">
-                <app-car (carDeleteEmitter)="deleteCar($event)"
-                         class="list-group-item" *ngFor="let car of cars" [carItem]="car" >
-                </app-car>
+            <div class="row">
+                <div class="col-xl-8 col-md-8 col-sm-12">
+                    <div class="list-group">
+                        <app-car (carDeleteEmitter)="deleteCar($event)"
+                                 class="list-group-item" *ngFor="let car of cars" [carItem]="car" >
+                        </app-car>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-12">
+                    <router-outlet></router-outlet>
+                </div>
             </div>
+
         </div>
         <ng-template #loadingBlock>
             <p>...Loading...</p>
         </ng-template>
     </ng-template>
-</div>
 <hr>
 <div class="container">
     <div class="row">

@@ -15,6 +15,12 @@
       "year": 2018,
       "id": 3,
       "color": "yellow"
+    },
+    {
+      "name": "Lada",
+      "year": 1995,
+      "id": 4,
+      "color": "green"
     }
   ]
 }

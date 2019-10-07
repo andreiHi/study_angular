@@ -21,6 +21,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppInterceptor} from './http/app-interceptor';
 import {ConsoleService} from 'app/console.service';
 import { CarPageComponent } from './car-page/car-page.component';
+import { HomeComponent } from './home/home.component';
 
 /**
  * Можно вынести в отдельную функцию
@@ -47,7 +48,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         CarFilterPipe,
         FormComponent,
         RegisterComponent,
-        CarPageComponent
+        CarPageComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

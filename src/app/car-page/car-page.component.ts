@@ -37,6 +37,9 @@ export class CarPageComponent implements OnInit {
     });
   }
 
+  /**
+   * Програмная навигация с передачей параметров и хэша
+   */
   openMazdaPage() {
     this.router.navigate(['./cars', 8, 'Mazda'], {
       queryParams: {

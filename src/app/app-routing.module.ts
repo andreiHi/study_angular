@@ -7,11 +7,15 @@ import {CarsComponent} from './cars/cars.component';
 import {FormComponent} from './form/form.component';
 import {RegisterComponent} from './register/register.component';
 import {CarPageComponent} from './car-page/car-page.component';
+import {HomeComponent} from './home/home.component';
 
 
 const routes: Routes = [
-  {path: '', component: CarsComponent},
-  {path: 'cars/:id/:name', component: CarPageComponent},
+ // {path: '', redirectTo: '/cars', pathMatch: 'full'}, так можно сделать редирект на нужную страницу
+  {path: '', component: HomeComponent},
+  {path: 'cars', component: CarsComponent, children: [
+      {path: ':id/:name', component: CarPageComponent},
+    ]},
   {path: 'directive', component: DirComponent},
   {path: 'pipes', component: ForPipesComponent},
   {path: 'dynamic', component: DynamicComponent},
