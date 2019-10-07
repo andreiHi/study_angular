@@ -23,6 +23,8 @@ import {ConsoleService} from 'app/console.service';
 import { CarPageComponent } from './car-page/car-page.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {AuthService} from './auth.service';
+import {AuthGuard} from './auth-guard.service';
 
 /**
  * Можно вынести в отдельную функцию
@@ -61,7 +63,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
         HttpClientModule
     ],
   providers: [
-      CarsService, INTERCEPTOR_PROVIDER, ConsoleService
+      CarsService, INTERCEPTOR_PROVIDER, ConsoleService, AuthService, AuthGuard
   ],
   bootstrap: [AppComponent]
 })
