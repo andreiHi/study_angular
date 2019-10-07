@@ -25,6 +25,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth-guard.service';
+import { SwitchComponent } from './switch/switch.component';
 
 /**
  * Можно вынести в отдельную функцию
@@ -53,7 +54,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         RegisterComponent,
         CarPageComponent,
         HomeComponent,
-        NotFoundComponent
+        NotFoundComponent,
+        SwitchComponent
     ],
     imports: [
         BrowserModule,

@@ -8,5 +8,9 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'front';
 
+  appState = 'on';
 
+  handleChange() {
+    console.log(this.appState);
+  }
 }

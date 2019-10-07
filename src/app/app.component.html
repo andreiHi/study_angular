@@ -37,4 +37,10 @@
             <router-outlet></router-outlet>
         </div>
     </div>
+    <app-switch
+            [(ngModel)]="appState"
+    (ngModelChange)="handleChange()"
+    ></app-switch> <!--создание ngModel из компанента -->
+    <hr>
+    <p>appState: {{ appState }}</p>
 </div>
