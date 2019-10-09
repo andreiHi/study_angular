@@ -26,6 +26,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth-guard.service';
 import { SwitchComponent } from './switch/switch.component';
+import { ModalComponent } from './modal/modal.component';
+import { DynComponent } from './dyn/dyn.component';
 
 /**
  * Можно вынести в отдельную функцию
@@ -55,7 +57,9 @@ const INTERCEPTOR_PROVIDER: Provider = {
         CarPageComponent,
         HomeComponent,
         NotFoundComponent,
-        SwitchComponent
+        SwitchComponent,
+        ModalComponent,
+        DynComponent
     ],
     imports: [
         BrowserModule,
