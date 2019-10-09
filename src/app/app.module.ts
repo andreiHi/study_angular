@@ -28,6 +28,7 @@ import {AuthGuard} from './auth-guard.service';
 import { SwitchComponent } from './switch/switch.component';
 import { ModalComponent } from './modal/modal.component';
 import { DynComponent } from './dyn/dyn.component';
+import {RefDirective} from './ref.directive';
 
 /**
  * Можно вынести в отдельную функцию
@@ -59,7 +60,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         NotFoundComponent,
         SwitchComponent,
         ModalComponent,
-        DynComponent
+        DynComponent,
+        RefDirective
     ],
     imports: [
         BrowserModule,
@@ -71,6 +73,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
   providers: [
       CarsService, INTERCEPTOR_PROVIDER, ConsoleService, AuthService, AuthGuard
   ],
+    entryComponents: [ModalComponent], // встроенный комонеты которых нет в шаблоне
   bootstrap: [AppComponent]
 })
 export class AppModule { }

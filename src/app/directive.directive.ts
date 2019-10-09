@@ -1,11 +1,11 @@
 import {Directive, ElementRef, HostBinding, HostListener, Input, OnInit} from '@angular/core';
 
 @Directive({
-  selector: '[appDirectiv]'
+  selector: '[appDirective]'
 })
 export class DirectiveDirective implements OnInit {
 
-  @Input('appDirectiv')hoverColor = 'green';
+  @Input('appDirective')hoverColor = 'green';
   @Input()defaultColor = 'transparent';
   @HostBinding('style.backgroundColor') background: string;
 
