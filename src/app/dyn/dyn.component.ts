@@ -1,6 +1,7 @@
 import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
 import {ModalComponent} from 'app/modal/modal.component';
 import {RefDirective} from 'app/ref.directive';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dyn',
@@ -17,8 +18,20 @@ export class DynComponent implements OnInit {
   /**
    * Фабрика для регтстрации компонента
    * @param resolver фабрика
+   * @param title Для SEO оптимизации
+   * @param meta мета данные для сео оптимизации и установки ключевых слов
    */
-  constructor(private resolver: ComponentFactoryResolver) { }
+  constructor(private resolver: ComponentFactoryResolver,
+              private title: Title,
+              private meta: Meta
+
+  ) {
+    title.setTitle('App Component!');
+    meta.addTags([
+      {name: 'keywords', content: 'angular.google.app component'},
+      {name: 'description', content: 'this is app component'}
+    ]);
+  }
 
   ngOnInit() {
   }
