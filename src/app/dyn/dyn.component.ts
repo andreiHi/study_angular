@@ -26,7 +26,7 @@ export class DynComponent implements OnInit {
               private meta: Meta
 
   ) {
-    title.setTitle('App Component!');
+    title.setTitle('Angular Application!');
     meta.addTags([
       {name: 'keywords', content: 'angular.google.app component'},
       {name: 'description', content: 'this is app component'}

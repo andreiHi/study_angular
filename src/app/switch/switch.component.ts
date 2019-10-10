@@ -47,9 +47,10 @@ export class SwitchComponent implements ControlValueAccessor {
 
   /**
    * Получает значение от ngModel и записывает из app-comp
-   * @param obj функ
+   * @param state функ
    */
   writeValue(state: string): void {
     this.state = state;
+    console.log('state', state);
   }
 }

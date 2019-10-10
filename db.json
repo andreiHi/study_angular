@@ -20,7 +20,8 @@
       "name": "Lada",
       "year": 1995,
       "id": 4,
-      "color": "green"
+      "color": "blue",
+      "isSold": false
     }
   ]
 }

@@ -1,5 +1,5 @@
 <div class="col-sm-12 col-sm-offset-2 col-xl-8">
-    <h1>{{ appTitle | async }}</h1>
+    <h1 appColor>{{ appTitle | async }}</h1>
     <p>Форма добавления машины</p>
     <hr>
     <app-add-car (carEmitter)="updateArray($event)"></app-add-car>

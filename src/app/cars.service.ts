@@ -1,4 +1,4 @@
-import {Car} from './car/car';
+import {Car} from './cars_module/car/car';
 import {ConsoleService} from './console.service';
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpEventType, HttpParams} from '@angular/common/http';

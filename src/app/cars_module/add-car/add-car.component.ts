@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {CarsService} from '../cars.service';
+import {CarsService} from '../../cars.service';
 import {Car} from '../car/car';
 
 @Component({

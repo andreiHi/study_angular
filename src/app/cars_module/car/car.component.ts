@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ConsoleService} from '../console.service';
+import {ConsoleService} from '../../console.service';
 import {Car} from './car';
-import {CarsService} from '../cars.service';
+import {CarsService} from '../../cars.service';
 
 @Component({
   selector: 'app-car',
