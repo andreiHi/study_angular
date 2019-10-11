@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 import {DirComponent} from './dir/dir.component';
 import {ForPipesComponent} from './pipe/for-pipes.component';
 import {DynamicComponent} from './filter/dynamic.component';
@@ -25,7 +25,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules  // Позволяет загружать остальные модули(lazy) после загрузки главного модуля
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
