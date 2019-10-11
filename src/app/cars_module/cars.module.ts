@@ -10,7 +10,7 @@ import {CarsComponent} from '../cars_module/cars/cars.component';
 import {CarsService} from '../cars.service';
 import {AuthGuard} from '../auth-guard.service';
 import {CarsRoutingModule} from '../cars_module/cars-routing.module';
-import {BrowserModule} from '@angular/platform-browser';
+import {SharedModule} from '../shead/shared.module';
 
 
 @NgModule({
@@ -21,11 +21,11 @@ import {BrowserModule} from '@angular/platform-browser';
         CarsComponent
     ],
     imports: [
-        CommonModule,
-        BrowserModule,
+        CommonModule, // Это для дочерних модулей вместо BrowserModule который может быть только один на все приложение
         CarsRoutingModule,
         FormsModule,
-        HttpClientModule
+        HttpClientModule,
+        SharedModule
     ],
     providers: [
         CarsService, AuthGuard

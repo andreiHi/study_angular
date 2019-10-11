@@ -6,7 +6,6 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {DirComponent} from './dir/dir.component';
-import {BackgroundDirective} from './shead/background.directive';
 import {DirectiveDirective} from './directive.directive';
 import {ForPipesComponent} from './pipe/for-pipes.component';
 import {PowPipe} from './pipe/pow.pipe';
@@ -15,7 +14,7 @@ import {CarFilterPipe} from './filter/carFilterPipe';
 import {FormComponent} from './form/form.component';
 import {RegisterComponent} from './register/register.component';
 import {AppInterceptor} from './http/app-interceptor';
-import {ConsoleService} from 'app/console.service';
+import {ConsoleService} from './console.service';
 import {HomeComponent} from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AuthService} from './auth.service';
@@ -24,6 +23,7 @@ import {ModalComponent} from './modal/modal.component';
 import {DynComponent} from './dyn/dyn.component';
 import {RefDirective} from './ref.directive';
 import {CarsModule} from './cars_module/cars.module';
+import {SharedModule} from './shead/shared.module';
 
 /**
  * Можно вынести в отдельную функцию
@@ -39,7 +39,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
     declarations: [
         AppComponent,
         DirComponent,
-        BackgroundDirective,
         DirectiveDirective,
         ForPipesComponent,
         PowPipe,
@@ -60,7 +59,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        CarsModule
+        CarsModule,
+        SharedModule
     ],
   providers: [
        INTERCEPTOR_PROVIDER, ConsoleService, AuthService
