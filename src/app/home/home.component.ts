@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   }
 
   changeAuthStatus(login: string) {
+    console.log(login);
     login === 'login' ? this.auth.login() : this.auth.logOut();
   }
 }
