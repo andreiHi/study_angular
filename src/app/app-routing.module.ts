@@ -13,6 +13,7 @@ import {DynComponent} from './dyn/dyn.component';
 const routes: Routes = [
  // {path: '', redirectTo: '/cars', pathMatch: 'full'}, так можно сделать редирект на нужную страницу
   {path: '', component: HomeComponent},
+  { path: 'cars', loadChildren: './cars_module/cars.module#CarsModule' },
   {path: 'directive', component: DirComponent},
   {path: 'pipes', component: ForPipesComponent},
   {path: 'dynamic', component: DynamicComponent},

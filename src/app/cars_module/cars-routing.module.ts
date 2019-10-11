@@ -7,7 +7,7 @@ import {CarPageComponent} from '../cars_module/car-page/car-page.component';
 const carsRoutes: Routes = [
     // регистрация дочернего роута и гвардов требующие авторизации
     {
-        path: 'cars', component: CarsComponent,   canActivate: [AuthGuard],
+        path: '', component: CarsComponent,   canActivate: [AuthGuard],
         children: [
             {path: ':id/:name', component: CarPageComponent},
         ]

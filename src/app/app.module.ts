@@ -22,18 +22,10 @@ import {SwitchComponent} from './switch/switch.component';
 import {ModalComponent} from './modal/modal.component';
 import {DynComponent} from './dyn/dyn.component';
 import {RefDirective} from './ref.directive';
-import {CarsModule} from './cars_module/cars.module';
+// import {CarsModule} from './cars_module/cars.module';
 import {SharedModule} from './shead/shared.module';
 
-/**
- * Можно вынести в отдельную функцию
- * и передовать в качестве параметра класс который нужно добавить
- */
-const INTERCEPTOR_PROVIDER: Provider = {
-    provide: HTTP_INTERCEPTORS, // что это такое (тип сущности)
-    useClass: AppInterceptor, // какой класс использовать
-    multi: true // поддержка нескольких подобных сущностей
-};
+
 
 @NgModule({
     declarations: [
@@ -59,11 +51,11 @@ const INTERCEPTOR_PROVIDER: Provider = {
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        CarsModule,
+        // CarsModule,
         SharedModule
     ],
   providers: [
-       INTERCEPTOR_PROVIDER, ConsoleService, AuthService
+      ConsoleService, AuthService
   ],
     entryComponents: [ModalComponent], // встроенный комонеты которых нет в шаблоне
   bootstrap: [AppComponent]
