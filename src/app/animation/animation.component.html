@@ -5,8 +5,17 @@
 
     ></div>
 </div>
-<div [@multi] = multiState
-     (click)="multiState = multiState === 'start' ? 'end': 'start'"
+<div  [ngStyle]="{'margin-bottom': '20px'}"
+      [@multi] = multiState
+      (click)="multiState = multiState === 'start' ? 'end': 'start'"
 >
-
+</div>
+<hr>
+<button class="btn btn-primary" (click)="isVisible = !isVisible">Переключить</button>
+<hr>
+<div class="alert alert-danger"
+     [@divTrigger]="'show'"
+     *ngIf="isVisible"
+>
+    It is a cloudy tragedy, sir.
 </div>
