@@ -6,8 +6,8 @@ import {DynamicComponent} from './filter/dynamic.component';
 import {FormComponent} from './form/form.component';
 import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
-import {NotFoundComponent} from './not-found/not-found.component';
 import {DynComponent} from './dyn/dyn.component';
+import {AnimationComponent} from 'app/animation/animation.component';
 
 
 const routes: Routes = [
@@ -19,7 +19,8 @@ const routes: Routes = [
   {path: 'dynamic', component: DynamicComponent},
   {path: 'login', component: FormComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'dynamicComp', component: DynComponent}
+  {path: 'dynamicComp', component: DynComponent},
+  {path: 'animation', component: AnimationComponent}
   // ,
   // {path: '**', component: NotFoundComponent} ??? не понятно как настроить при нескольких модулях
 ];

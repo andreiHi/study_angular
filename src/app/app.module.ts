@@ -24,6 +24,8 @@ import {DynComponent} from './dyn/dyn.component';
 import {RefDirective} from './ref.directive';
 // import {CarsModule} from './cars_module/cars.module';
 import {SharedModule} from './shead/shared.module';
+import { AnimationComponent } from './animation/animation.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -43,7 +45,8 @@ import {SharedModule} from './shead/shared.module';
         SwitchComponent,
         ModalComponent,
         DynComponent,
-        RefDirective
+        RefDirective,
+        AnimationComponent
     ],
     imports: [
         BrowserModule,
@@ -52,7 +55,8 @@ import {SharedModule} from './shead/shared.module';
         ReactiveFormsModule,
         HttpClientModule,
         // CarsModule,
-        SharedModule
+        SharedModule,
+        BrowserAnimationsModule
     ],
   providers: [
       ConsoleService, AuthService
