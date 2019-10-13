@@ -17,8 +17,14 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
             width: '300px',
             height: '300px'
           })),
-          transition('start => end', animate(800)),
-          transition('end => start', animate('800ms 0.5s ease-out')),
+          state('active', style({
+            backgroundColor: 'orange',
+            width: '170px',
+            height: '170px'
+          })),
+          transition('start <=> end', animate(800)),
+          transition('start => active', animate(400)),
+          transition('active => end', animate(400))
       ])
   ]
 })
@@ -35,6 +41,6 @@ export class AnimationComponent implements OnInit {
     this.clickedDiveState = 'end';
     setTimeout(() => {
       this.clickedDiveState = 'start';
-    }, 3000);
+    }, 2000);
   }
 }

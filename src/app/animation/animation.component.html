@@ -1,1 +1,4 @@
-<div [@clickedDiv]=clickedDiveState (click)="changeDivState()"></div>
+<div [@clickedDiv]=clickedDiveState
+     (click)="changeDivState()"
+     (mousedown)="clickedDiveState = 'active'"
+></div>
