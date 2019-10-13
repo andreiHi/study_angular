@@ -1,4 +1,12 @@
-<div [@clickedDiv]=clickedDiveState
-     (click)="changeDivState()"
-     (mousedown)="clickedDiveState = 'active'"
-></div>
+<div [ngStyle]="{'margin-bottom': '20px'}">
+    <div [@clickedDiv]=clickedDiveState
+         (click)="changeDivState()"
+         (mousedown)="clickedDiveState = 'active'"
+
+    ></div>
+</div>
+<div [@multi] = multiState
+     (click)="multiState = multiState === 'start' ? 'end': 'start'"
+>
+
+</div>
